@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "Sales APP",
+    "slug": "hello",
+    "version": "1.0.0",
+    "jsEngine": "hermes",
+    "splash": {
+      "image": "./navigation/Img/call.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "d7affe52-e667-42e8-94d4-02156f824e56"
+      }
+    }
+  },
+  "name": "Sales APP"
+}

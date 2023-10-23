@@ -1,0 +1,57 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/font/Arimo-Italic-VariableFont_wght.ttf",
+      "sha1": "5540a5483a4192f3f23c9e24be6767f3d928a92e"
+    },
+    {
+      "path": "assets/font/Arimo-VariableFont_wght.ttf",
+      "sha1": "dd01e3bf44fc97cd3829230737fbe7cc8edff7fb"
+    },
+    {
+      "path": "assets/font/Arimo.zip",
+      "sha1": "65076cb60992762d2e971d6f0defecf6878d49ce"
+    },
+    {
+      "path": "assets/font/LICENSE.txt",
+      "sha1": "47b573e3824cd5e02a1a3ae99e2735b49e0256e4"
+    },
+    {
+      "path": "assets/font/README.txt",
+      "sha1": "b4d1faec546c468cc0316a47af38a010f09c83a6"
+    },
+    {
+      "path": "assets/font/static/Arimo-Bold.ttf",
+      "sha1": "55cd1f277429c65e26433da5d122044142f76d58"
+    },
+    {
+      "path": "assets/font/static/Arimo-BoldItalic.ttf",
+      "sha1": "f989643001f635069dcf488ac988c4c254a344e1"
+    },
+    {
+      "path": "assets/font/static/Arimo-Italic.ttf",
+      "sha1": "979cc7f213d58066fdf95ad44671d9a018c458e5"
+    },
+    {
+      "path": "assets/font/static/Arimo-Medium.ttf",
+      "sha1": "1e4d0870c9077a4281c1ebf52b04e5e58436360b"
+    },
+    {
+      "path": "assets/font/static/Arimo-MediumItalic.ttf",
+      "sha1": "af34c9746d6bfdebd3ca15ac17093e79c0ac002c"
+    },
+    {
+      "path": "assets/font/static/Arimo-Regular.ttf",
+      "sha1": "c7d2ac919d1331a6340279e18d15f5de4c8f3df6"
+    },
+    {
+      "path": "assets/font/static/Arimo-SemiBold.ttf",
+      "sha1": "84336694c2e68a145abf5f1fdb6bf7fd16f4019c"
+    },
+    {
+      "path": "assets/font/static/Arimo-SemiBoldItalic.ttf",
+      "sha1": "f2c80d0ca7e99ec490fb57509ef9f3d950a31c26"
+    }
+  ]
+}
