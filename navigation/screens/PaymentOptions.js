@@ -254,7 +254,7 @@ setLoadingPay(true)
             transactionNumber: book.transactionNumber,
             paymentProvider: paymentType,
             paymentChannel: "ANDROID",
-            returnApp:{Activity:"com.google.android.apps.chrome.Main",PackageName:"com.android.chrome"}
+            returnApp:{Activity:"",PackageName:"com.yeneguzo"}
 
           })          
         }
@@ -286,10 +286,7 @@ setLoadingPay(true)
               "Sorry, you don't have the app installed in your phone.",
               [{ text: "OK", onPress: () => { } }]
             )
-            
             );
-           
-
           } 
           else{
             console.log('response-----------',res.data)
@@ -383,8 +380,7 @@ setLoadingPay(true)
          </Text>
            <View style={{alignSelf:"center",marginTop:10,flexDirection:'row',marginBottom:10}}>
             <Text style={{fontSize:16}}>Bill Reference:
-            
-   
+     
     <Text onPress={()=>{copyTicket(book.transactionNumber)}} style={{fontSize:18,fontWeight:'500',}}>{' '}{`${book.transactionNumber}`}</Text> </Text>
       
             <TouchableOpacity style={{marginLeft:5}} onPress={()=>{copyTicket(book.transactionNumber)}}>
@@ -623,7 +619,6 @@ setLoadingPay(true)
                   }
                   source={require("../bankLogo/ets1.png")}
                 />
-              
             
             </View>
             </TouchableOpacity>
@@ -919,8 +914,6 @@ setLoadingPay(true)
 
     const bookingDetails = seat.map((item, index) => {
       return {
-      
-     
         passenger: {
           phoneNumber: phoneNumberList[index],
           fullName: fullNameList[index],
@@ -1288,13 +1281,10 @@ setLoadingPay(true)
             <Text
               style={{
                 textAlignVertical: "center",
-              
                 color: "black",
-              
-                fontSize: 16,
-                fontWeight:"400",
-                fontFamily:"Arimo-Regular"
-                
+                fontSize: 17,
+                fontWeight:"bold",
+                // fontFamily:"Arimo-Regular"
               }}
             >
               Tariff 
@@ -1308,9 +1298,9 @@ setLoadingPay(true)
                 textAlignVertical: "center",
 
                 // color: "#FF6A22",
-                color: "black",
+                color: "#FF6A22",
              
-                fontSize: 18,
+                fontSize: 17,
                 fontWeight: "bold",
                 fontFamily:"Arimo-Regular"
                
@@ -1344,9 +1334,8 @@ setLoadingPay(true)
             borderBottomStartRadius:10,
               flex: 1,
               flexDirection: "row",
-       
-              marginLeft: 20,
               
+              marginLeft: 20,
               elevation:2,
             }}
           >
@@ -1363,9 +1352,9 @@ setLoadingPay(true)
                 
                 textAlignVertical: "center",
                 color: "black",
-                fontSize: 16,
-                fontWeight:"400",
-                fontFamily:"Arimo-Regular"
+                fontSize: 17,
+                fontWeight:"bold",
+                // fontFamily:"Arimo-Regular"
               }}
             >
               Total Tariff 
@@ -1376,14 +1365,15 @@ setLoadingPay(true)
                 flex:1,
                 textAlign:"right",
                 textAlignVertical: "center",
-                color: "black",
+                color: "#FF6A22",
                 // color: "#FF6A22",
-                fontSize: 18,
+                fontSize: 17,
                 fontWeight: "bold",
                 fontFamily:"Arimo-Regular"
               }}
             >
-             {arr.length * allData.price} ETB
+             {(arr.length * allData.price).toFixed(2)} ETB
+             
             </Text>
             </View>
 </View>
@@ -1604,7 +1594,7 @@ setLoadingPay(true)
                   width: "27%",
                   bottom: 2,
                   marginLeft: 57,
-
+                  
                   right: "18%",
                 }}
               >
@@ -1888,7 +1878,6 @@ setLoadingPay(true)
                           textAlign: "left",
                           flex: 1,
                           marginTop: -5,
-
                           marginRight: 10,
                           left: 1,
                           fontWeight: "bold",
@@ -2459,6 +2448,7 @@ setLoadingPay(true)
           </View>
         )}
       </View>
+      {/* <Pressable style={{width:100,height:100,backgroundColor:'red'}} onPress={()=>{Linking.openURL('yeneguzo')}} ></Pressable> */}
       {/* <View>
         <Pressable
           onPress={() => {

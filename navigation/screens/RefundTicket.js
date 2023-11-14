@@ -43,7 +43,6 @@ import { faL } from "@fortawesome/free-solid-svg-icons";
 import IntentLauncher, { IntentConstant } from 'react-native-android-intent-launcher'
 const AlertIcon = (props) => <Icon {...props} name="alert-circle-outline" />;
 
-
 export default function RefundCancelRequest({ navigation }) {
   const [ticketNum, setTicketNum] = React.useState();
   const { condata, addData } = useContext(DataContext);
@@ -57,12 +56,11 @@ export default function RefundCancelRequest({ navigation }) {
   const [userData,setUserData] = useState()
   const [userTransaction,setUserTransaction] = useState()
 const [searchTick,setSearchTick] = useState(false)
-const [refreshing, setRefreshing] = useState(false);
-const [isClickable,setIsClickable] = useState(true)
+  const [refreshing, setRefreshing] = useState(false);
+  const [isClickable,setIsClickable] = useState(true)
   const isRefund = true;
   const route = useRoute();
   const { CustomModule } = NativeModules;
-
 
  useFocusEffect(
     React.useCallback(() => {
@@ -356,7 +354,7 @@ const [isClickable,setIsClickable] = useState(true)
       console.error('Error getting current activity:', error);
     });
   };
-
+  
   const startPaymentETH = (ticketNum , paymentType) => {
    
 console.log('Transaction number :-',ticketNum)
@@ -727,7 +725,6 @@ const copyTicket = (ticketN)=>{
             
    
     <Text onPress={()=>{copyTicket(212121)}} style={{fontSize:18,fontWeight:'500',}}>{' '}212121</Text> </Text>
-      
             <TouchableOpacity style={{marginLeft:5}} onPress={()=>{copyTicket(212121)}}>
   <FontAwesomeIcon
   icon={faCopy}
@@ -1062,8 +1059,7 @@ const copyTicket = (ticketN)=>{
               </View>
               <Image
                 source={require("../Img/profile10.png")}
-                style={{
-                 
+                style={{ 
                   width: 50,
                   height: 50,
                   marginRight:10

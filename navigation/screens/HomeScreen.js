@@ -24,7 +24,6 @@ import {
 
 } from "react-native";
 
-
 import {
   NavigationContainer,
   useFocusEffect,
@@ -167,7 +166,7 @@ export default function HomeScreen({ navigation }) {
   const clientId = 'appuser';
   const clientSecret = 'appuser@123';
 
-
+  
   const encodedCredentials = Buffer.from(clientId + ':' + clientSecret).toString('base64');
   const authorizationHeader = `Basic ${encodedCredentials}`;
 
@@ -203,11 +202,9 @@ export default function HomeScreen({ navigation }) {
       console.error('Error storing data:', error);
     }
   }
-
   const x = () => {
     setFetchNow(true);
   }
-
   const onSelect = (index) => {
     if (data[index].key != toText) {
       setValuefrom(data[index].value);
@@ -217,12 +214,10 @@ export default function HomeScreen({ navigation }) {
       setValuefrom("");
     }
   };
-
   const onChangeText = (query) => {
     setValuefrom(query);
     setData(dataLocation.filter((item) => filter(item, query)));
   };
-
   const clearInput = () => {
     setValuefrom("");
     setData(dataLocation);
@@ -298,13 +293,11 @@ export default function HomeScreen({ navigation }) {
   const onSelectBus = (index) => {
     console.log("data-------------", data);
     // setValueTo(dataLocation[index].value);
-
     /////////////////
     setValueBus(BusNameListDrop[index].label);
     setBusName(BusNameListDrop[index].label);
     setBusUuid(BusNameListDrop[index].value);
   };
-
   const onSelectTo = (index) => {
     console.log("data-------------", data);
     // setValueTo(dataLocation[index].value);
@@ -316,7 +309,6 @@ export default function HomeScreen({ navigation }) {
       setValueTo("");
     }
   };
-
   const onChangeTextTo = (query) => {
     setValueTo(query);
     setData(dataLocation.filter((item) => filter(item, query)));
@@ -333,19 +325,16 @@ export default function HomeScreen({ navigation }) {
       />
     </TouchableWithoutFeedback>
   );
-
   const renderOption = (item, index) => {
     // console.log(item,index)
     return (
       <AutocompleteItem
         key={item.key}
         title={item.value}
-
       // accessoryLeft={StarIcon}
       />
     );
   };
-
   const renderOptionBus = (item, index) => {
     // console.log(item,index)
     return (
@@ -357,7 +346,6 @@ export default function HomeScreen({ navigation }) {
       />
     );
   };
-
   const showMode = (currenttMode) => {
     setShow(true);
   };
@@ -412,42 +400,38 @@ export default function HomeScreen({ navigation }) {
            
                 <View
                   style={{
-
                     width: screenWidth/1.1,
-
+                    height:40,
                     borderWidth: 1,
                     borderRadius: 10,
                     marginBottom: 10,
                     marginTop: 5,
                     marginLeft: 20,
-                    backgroundColor: "white",
-                    borderColor: "white",
+                    backgroundColor: "#FFF7F3",
+                    borderColor: "#FFF7F3",
                     marginRight: 15,
-                    
                   }}
                 >
                   <View
                     style={{
                       flexDirection: "row",
                       
-                      
                     }}
                   >
                     <View
                       style={{
                         flexDirection: "row",
-                       marginBottom:20,
+                       marginBottom:10,
                        marginLeft:10
                       }}
                     >
-                  
-
+                      
                       <Text
                         style={{
                           fontSize: 14,
-                          fontWeight: "bold",
+                          fontWeight: "400",
                           marginLeft: 10,
-                          marginTop: 15,
+                          marginTop: 10,
                           color: "black"
                         }}
                       >
@@ -455,7 +439,7 @@ export default function HomeScreen({ navigation }) {
                     </Text>
                     <FontAwesomeIcon
                         icon={faLocationCrosshairs}
-                        size={18}
+                        size={14}
                         style={{
                           color: "black",
                           alignSelf: "center",
@@ -473,21 +457,21 @@ export default function HomeScreen({ navigation }) {
                     >
                       <FontAwesomeIcon
                         icon={faLocationDot}
-                        size={18}
+                        size={14}
                         style={{
                           color: "black",
                           alignSelf: "center",
-
                           justifyContent: "center",
-                          marginLeft: 5
+                          marginLeft: 5,
+                          top: 2,
                         }}
                       />
                       <Text
                         style={{
                           fontSize: 14,
-                          fontWeight: "bold",
+                          fontWeight: "400",
                           marginLeft: 10,
-                          marginTop: 15,
+                          marginTop: 10,
                           color: "black",
                           // marginBottom: 10
 
@@ -512,7 +496,6 @@ export default function HomeScreen({ navigation }) {
     // setInputToName(InputFromName)
     setValueTo(valuefrom);
     setInputTo(fromText);
-
     console.log(InputToName);
     console.log(InputFromName);
   };
@@ -562,6 +545,11 @@ export default function HomeScreen({ navigation }) {
   const checkOneWayForm = () => {
     if (toText && selectedDate != "" && valueTo) {
       return true;
+    }
+    else if(selectedDate.gregorian.date == moment().format('D') && selectedDate.gregorian.month == moment().format('M')  ){
+      Alert.alert("Yene Guzo", "You can't book today's schedle, Please choose another date", [
+        { text: "OK", onPress: () => { } },
+      ]);
     }
     else if (isActiveSearch) {
       return true;
@@ -741,31 +729,32 @@ export default function HomeScreen({ navigation }) {
     locat.map((l) => console.log(l.name));
   };
 
-  const DepMonth = selectedDate && selectedDate ?.gregorian.month.toString();
-  const DepDate = selectedDate && selectedDate ?.gregorian.date.toString();
-  const dateDeparture = isActiveSearch
+    const DepMonth = selectedDate && selectedDate ?.gregorian.month.toString();
+    const DepDate = selectedDate && selectedDate ?.gregorian.date.toString();
+    const dateDeparture = isActiveSearch
     ? activeDate
     :
     selectedDate &&
     `${selectedDate ?.gregorian.year}-${DepMonth.length < 2 ? "0" : ""}${
     selectedDate ?.gregorian.month
     }-${DepDate.length < 2 ? "0" : ""}${selectedDate.gregorian.date}`;
-  const dateDepartureFormat =
+    const dateDepartureFormat =
     selectedDate &&
     `${DepDate.length < 2 ? "0" : ""}${selectedDate.gregorian.date}-${
     DepMonth.length < 2 ? "0" : ""
     }${selectedDate ?.gregorian.month}-${selectedDate ?.gregorian.year}`;
+    
     const EcDateDepartureFormat =
     selectedDate &&
-    `${DepDate.length < 2 ? "0" : ""}${selectedDate.ethiopian.date}-${
-    DepMonth.length < 2 ? "0" : ""
+    `${DepDate.toString().length < 2 ? "" : ""}${selectedDate.ethiopian.date}-${
+    DepMonth.toString().length < 2 ? "" : ""
     }${selectedDate ?.ethiopian.month}-${selectedDate ?.ethiopian.year}`;
 
-  const returnMonth =
+    const returnMonth =
     selectedReturnDate && selectedReturnDate ?.gregorian.month.toString();
-  const returnDate =
+    const returnDate =
     selectedReturnDate && selectedReturnDate ?.gregorian.date.toString();
-  const dateReturn =
+    const dateReturn =
     selectedReturnDate &&
     `${selectedReturnDate ?.gregorian.year}-${
     returnMonth.length < 2 ? "0" : ""
@@ -773,7 +762,7 @@ export default function HomeScreen({ navigation }) {
     returnDate.length < 2 ? "0" : ""
     }${selectedReturnDate.gregorian.date}`;
 
-  const dateReturnFormat =
+    const dateReturnFormat =
     selectedReturnDate &&
     `${returnDate.length < 2 ? "0" : ""}${selectedReturnDate.gregorian.date}-${
     returnMonth.length < 2 ? "0" : ""
@@ -865,7 +854,6 @@ export default function HomeScreen({ navigation }) {
                 <View
                   style={{
                     flexDirection: "column",
-
                     top: 20,
                     alignSelf: "flex-end",
                     width: 50,
@@ -888,11 +876,8 @@ export default function HomeScreen({ navigation }) {
                 <View
                   style={{
                     flexDirection: "column",
-
                     top: 30,
                     alignSelf: "center",
-
-
                   }}
                 >
                   <Image
@@ -1082,9 +1067,7 @@ export default function HomeScreen({ navigation }) {
       }}
     // stickyHeaderIndices={[0]}
     >
-      <ImageBackground
-
-      >
+      <ImageBackground>
         {showSideBar &&
           Sidebar()}
         <View style={{ backgroundColor: "#FFF7F3", marginBottom: 30, height: 70 }}>
@@ -1167,12 +1150,10 @@ export default function HomeScreen({ navigation }) {
             }}
           >
             <View style={{ flex: 1, marginTop: 30 }}>
-              
-            </View>
-
-           
+            </View>           
               <Autocomplete
                 placeholder="ADDIS ABABA"
+                // placeholder="Leaving from"
                 placeholderTextColor={"grey"}
                 value={valuefrom}
                 disabled={true}
@@ -1198,7 +1179,6 @@ export default function HomeScreen({ navigation }) {
             
             <Pressable></Pressable>
 
-           
               <Autocomplete
                 placeholder="Going To"
                 placeholderTextColor={"grey"}
@@ -1223,10 +1203,8 @@ export default function HomeScreen({ navigation }) {
               >
                 {data.map(renderOption)}
               </Autocomplete>
-         
 
             <Pressable onPress={() => showMode("date")}>
-            
                 <View
                   style={{
                     flex: 1,
@@ -1235,7 +1213,6 @@ export default function HomeScreen({ navigation }) {
                     alignItems: "center",
                     backgroundColor: "white",
                     width: screenWidth / 1.3,
-
                     borderWidth: 1,
                     borderColor: "#FFF7F3",
                     elevation: 10,
@@ -1289,7 +1266,7 @@ export default function HomeScreen({ navigation }) {
                       style={{ flex: 1, justifyContent: "center" }}>
                       <View
                         style={{
-                          width: screenWidth / 1.1,
+                          // width: screenWidth / 1.1,
                           alignSelf: "center",
                           position: "relative",
                           elevation: 20,
@@ -1450,7 +1427,7 @@ export default function HomeScreen({ navigation }) {
               {/* ////////////// */}
               <Pressable
                 onPress={() => {
-                  setNumberOfPassengers(numberOfPassengers < 3 ? numberOfPassengers + 1 : numberOfPassengers);
+                  setNumberOfPassengers(numberOfPassengers < 5 ? numberOfPassengers + 1 : numberOfPassengers);
                 }}
               >
                 <View
@@ -1575,7 +1552,15 @@ export default function HomeScreen({ navigation }) {
               }}
             >
               <Pressable
-                onPress={searchBtn}
+                onPress={()=>{
+                  if(selectedDate.gregorian.date == moment().format('D') && selectedDate.gregorian.month == moment().format('M') ){
+                  Alert.alert("Yene Guzo", "You can't book today's schedule, Please choose another date", [
+                    { text: "OK", onPress: () => { } },
+                  ]);
+                }
+                else { searchBtn()}
+              
+              }}
                 style={{
                   backgroundColor: "#FF6A22",
                   width: screenWidth / 1.3,
@@ -1600,7 +1585,7 @@ export default function HomeScreen({ navigation }) {
               </Text>
               </Pressable>
 
-              {/* <Pressable onPress={()=>{console.log('inpuutto------',valuefrom)}}>
+              {/* <Pressable onPress={()=>{console.log('inpuutto------',moment().format("")) }} >
               <Text
                 style={{
                   textAlign: "right",
@@ -1613,7 +1598,7 @@ export default function HomeScreen({ navigation }) {
               >
                 test
               </Text>
-            </Pressable> */}
+            </Pressable>  */}
             </View>
           </View>
       

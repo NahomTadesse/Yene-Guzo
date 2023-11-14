@@ -676,8 +676,8 @@ export default function SearchResult({ navigation }) {
                   </View>
 
                  </View>
-                  <View style={{width:screenWidth/1.3 , height:0.5,borderWidth:0.9,borderStyle:'dashed',alignSelf:'center',marginTop:15,borderColor:"#FF6A22"}}>
-                  
+                  {/* <View style={{width:screenWidth/1.3 , height:0.5,borderWidth:0.9,borderStyle:'dashed',alignSelf:'center',marginTop:15,borderColor:"#FF6A22"}}> */}
+                  <View style={{width:screenWidth/1.3 ,height:2,alignSelf:'center',marginTop:15,backgroundColor:"#FF6A22"}}>
                   </View>
                   <View style={{ flex: 1, flexDirection: "row" }}>
                   <Text
@@ -689,7 +689,6 @@ export default function SearchResult({ navigation }) {
                         textAlign: "left",
                         fontWeight: "bold",
                         marginLeft:20
-                   
                       
                       }}
                     >
@@ -701,7 +700,6 @@ export default function SearchResult({ navigation }) {
                     <Text
                       style={{
                         color: "#FF6A22",
-                      
                         flex: 1,
                         textAlign: "right",
                         marginRight: 20,
@@ -1079,7 +1077,7 @@ export default function SearchResult({ navigation }) {
           }}
         >
           <Text style={{ color: "#FF6A22" }}>
-            {`${availableSchedule.scheduleList.length} Route(s) found`}
+            {`${availableSchedule.scheduleList.length} Schedule(s) found`}
           </Text>
         </View>
       )}

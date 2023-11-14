@@ -118,8 +118,6 @@ export default function PassengersInformation({ navigation }) {
   const arr = Array(numberOfPassengers).fill(numberOfPassengers)
   const phoneNumberList = Object.values(phoneNumber);
   const ageList = Object.values(age);
-
-
   const passengersgenderList = Object.values(gender);
   const passengerOnboardingList = onboarding;
   const passengerOffBoardingPlace = offboarding;
@@ -526,7 +524,9 @@ export default function PassengersInformation({ navigation }) {
           <View style={index == 1 && arr.length == 3 ? { alignItems: "center", marginBottom: 20, flex: 1, marginTop: 10 } :
             index == 1 && arr.length == 2 ? { alignItems: "center", marginBottom: 100, flex: 1, marginTop: 10 } :
 
-              index == 2 ? { alignItems: "center", marginBottom: 100, flex: 1, marginTop: 10 } :
+           arr.length == 4 && index == 3 ? { alignItems: "center", marginBottom: 100, flex: 1, marginTop: 10 } :
+           arr.length == 3 && index == 2 ? { alignItems: "center", marginBottom: 100, flex: 1, marginTop: 10 } :
+              index == 4 ? { alignItems: "center", marginBottom: 100, flex: 1, marginTop: 10 } :
                 { alignItems: "center", marginBottom: 20, flex: 1, marginTop: 10 }}>
             <View
               style={{
@@ -809,7 +809,6 @@ export default function PassengersInformation({ navigation }) {
      
       <View style={{
         flex: 1,
-
         maxHeight: 30,
         alignItems: "flex-start",
         flexDirection: "row",
@@ -840,7 +839,7 @@ export default function PassengersInformation({ navigation }) {
       )}
 
 
-      <View style={{    marginBottom: 10,
+      <View style={{marginBottom: 10,
           position: "absolute",
           bottom: 0,alignSelf:"center"}}> 
           <Text
@@ -865,9 +864,6 @@ export default function PassengersInformation({ navigation }) {
           alignSelf: "center",
           alignItems: "center",
           justifyContent: "center",
-      
-
-
 
         }}
       >

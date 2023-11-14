@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { Dimensions, Pressable } from "react-native";
+import { Dimensions, Pressable,Linking } from "react-native";
 import { useState, useEffect ,useContext} from "react";
 
 //////////////////
@@ -52,7 +52,7 @@ export default function MainContainer() {
  const[isLoading,setIsLoading] = useState(true)
 
 const linking ={
-  prefixes:['yeneguzo://']
+  prefixes:['com.yeneguzo://app']
 }
   const onNavigationReady = () => {
     SplashScreen.hide();
@@ -336,4 +336,15 @@ const Home = () => {
     </NavigationContainer>
   );
 }
+// Linking.addEventListener(`com.yeneguzo\home`, ({ url }) => {
+//   // Parse the URL and extract the route name
+//   const { path, queryParams } = Linking.parse(url);
+//   const route = path.replace(/\/$/, '');
 
+//   // Navigate to the corresponding screen based on the route name
+//   if (route === 'home') {
+//     // Extract any query parameters and pass them to the screen
+//     const { itemId } = queryParams;
+//     Stack.Navigator.dispatch(StackActions.push('home', { itemId }));
+//   }
+// });

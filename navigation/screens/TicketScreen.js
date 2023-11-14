@@ -163,6 +163,8 @@ const allin =()=>{
       <View style={  ticketInfo && ticketInfo.paymentDetails.length ==2 ? {transform: [{ scale: 0.8 }] , marginTop:-170,marginBottom:-150,marginLeft:35}
        : 
        ticketInfo &&  ticketInfo.paymentDetails.length ==3 ? {transform: [{ scale: 0.8 }] , marginTop:-400,marginBottom:-260,marginLeft:35} :
+       ticketInfo &&  ticketInfo.paymentDetails.length ==4 ? {transform: [{ scale: 0.8 }] , marginTop:-350,marginBottom:-350,marginLeft:35} :
+       ticketInfo &&  ticketInfo.paymentDetails.length ==5 ? {transform: [{ scale: 0.8 }] , marginTop:-450,marginBottom:-380,marginLeft:35} :
        {transform: [{ scale: 0.8 }] , marginTop:-90,marginBottom:-80,marginLeft:35}}>
         {allin()}
       </View>
@@ -175,7 +177,7 @@ const allin =()=>{
     
     <View style={{backgroundColor:"#FFF7F3"}}>
         
-<View style={{width:screenWidth/1.1,backgroundColor:  "#FFF7F3",marginLeft:-20,
+<View style={{width:screenWidth/1.1,backgroundColor: "#FFF7F3",marginLeft:-20,
 marginBottom:10,marginTop:10,elevation:5,
 marginRight:10}}>
 <Text style={{alignSelf:"center",fontSize:30,fontWeight:'bold',marginTop:20,marginBottom:5}}> {ticketInfo.associationName}</Text>
